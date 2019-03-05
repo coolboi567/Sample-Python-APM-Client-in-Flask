@@ -1,14 +1,16 @@
 from flask import Flask, redirect, request, jsonify, abort
+from flask_cors import CORS
 from elasticapm.contrib.flask import ElasticAPM
 
 app = Flask(__name__)
 apm = ElasticAPM(app,
 	server_url='http://localhost:8200',
-	service_name='test',
+	service_name='app-02',
 	secret_token='',
 	capture_body='transactions',
 	#transaction_sample_rate = 0.2
 	)
+CORS(app)
 
 @app.route('/')
 def index():
