@@ -1,0 +1,4 @@
+blinker
+flask
+flask_cors
+elastic-apm
